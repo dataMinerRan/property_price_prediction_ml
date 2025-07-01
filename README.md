@@ -77,9 +77,16 @@ The model with the lowest COD and competitive performance across other metrics i
 
 ## 📈 Results Summary
 
-- Random Forest and XGBoost outperformed CCAO's baseline.
-- COD reduced significantly below the 15% benchmark.
-- Feature importance insights aligned with domain expectations.
+- All machine learning models outperformed the CCAO’s baseline, which had a Coefficient of Dispersion (COD) of 24.0.
+- Random Forest Regressor was the top performer after hyperparameter tuning.
+	• max_depth = 70
+	• bootstrap = True
+	• max_features = 5
+	• min_samples_split = 6
+	• n_estimators = 400
+- The optimized Random Forest model achieved a COD of 11.82, not only beating the CCAO model but also falling well below the 15% threshold, indicating significantly improved fairness and consistency.
+- XGBoost also delivered strong performance across standard regression metrics.
+- Feature importance analysis revealed intuitive, domain-aligned predictors of sale price.
 
 ## 📜 License
 
