@@ -22,18 +22,20 @@ To ensure fair comparison, all data preprocessing steps applied to the machine l
 ## 🧪 Approach
 
 The notebook walks through a complete end-to-end data science pipeline, starting from data understanding to performance benchmarking against CCAO’s assessment:
-	•	Exploratory Data Analysis (EDA)
-	•	Feature engineering and data cleaning
-	•	Model training using:
-	•	Linear Regression
-	•	Ridge Regression
-  •	SVM Regressor 
-	•	Random Forest
-	•	XGBoost
-	•	Hyperparameter tuning
-	•	Performance evaluation and comparison with CCAO’s results
 
-Each model is evaluated using standard regression metrics and the domain-specific Coefficient of Dispersion (COD), allowing for direct comparison with the CCAO’s valuation accuracy.
+- **Exploratory Data Analysis (EDA)**
+- **Feature engineering and data cleaning**
+- **Use of `Pipeline` objects** from `scikit-learn` and `imblearn` to streamline preprocessing, scaling, encoding, oversampling, and model training steps.
+- **Model training using:**
+  - Linear Regression  
+  - Ridge Regression  
+  - Support Vector Regressor (SVR)  
+  - Random Forest Regressor  
+  - XGBoost Regressor
+- **Hyperparameter tuning** with `GridSearchCV` and `RandomizedSearchCV`
+- **Model evaluation and COD comparison** with CCAO
+
+Each model is evaluated using standard regression metrics and the domain-specific **Coefficient of Dispersion (COD)**, allowing for direct comparison with the CCAO’s valuation accuracy.
 
 ## 📁 Repository Structure
 
@@ -77,16 +79,16 @@ The model with the lowest COD and competitive performance across other metrics i
 
 ## 📈 Results Summary
 
-- All machine learning models outperformed the CCAO’s baseline, which had a Coefficient of Dispersion (COD) of 24.0.
-- Random Forest Regressor was the top performer after hyperparameter tuning.
-	• max_depth = 70
-	• bootstrap = True
-	• max_features = 5
-	• min_samples_split = 6
-	• n_estimators = 400
-- The optimized Random Forest model achieved a COD of 11.82, not only beating the CCAO model but also falling well below the 15% threshold, indicating significantly improved fairness and consistency.
-- XGBoost also delivered strong performance across standard regression metrics.
-- Feature importance analysis revealed intuitive, domain-aligned predictors of sale price.
+- All machine learning models outperformed the CCAO’s baseline, which had a **Coefficient of Dispersion (COD)** of **24.0**.
+- **Random Forest Regressor** was the top performer after hyperparameter tuning, with the following configuration:
+  - `max_depth = 70`  
+  - `bootstrap = True`  
+  - `max_features = 5`  
+  - `min_samples_split = 6`  
+  - `n_estimators = 400`
+- The optimized Random Forest model achieved a **COD of 11.82**, not only beating the CCAO model but also falling well below the **15% threshold**, indicating significantly improved fairness and consistency.
+- **XGBoost** also delivered strong performance across standard regression metrics.
+- **Feature importance analysis** revealed intuitive, domain-aligned predictors of sale price.
 
 ## 📜 License
 
